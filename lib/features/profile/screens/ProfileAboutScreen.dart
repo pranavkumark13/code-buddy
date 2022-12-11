@@ -1,5 +1,5 @@
 // ignore_for_file: file_names, overridden_fields
-import 'package:code_buddy/features/profile/screens/EditProfileScreen.dart';
+import 'package:code_buddy/features/profile/screens/EditDeveloperProfile.dart';
 import 'package:code_buddy/screens/ProfilePictureDetailScreen.dart';
 import 'package:code_buddy/utils/StackNavigator.dart';
 import 'package:code_buddy/utils/BaseScreen.dart';
@@ -28,7 +28,7 @@ class _ProfileAboutScreenState extends BaseScreenState<ProfileAboutScreen> with 
 
   @override
   List<Widget>? getActions() {
-    return [];
+    return [GestureDetector(onTap: () {StackNavigator.instance.sendToScreen(context, const EditDeveloperProfile());}, child: Container(margin: const EdgeInsets.only(right: 12), child: const Icon(Iconsax.edit, color: Colours.black,)))];
   }
 
   @override
@@ -50,43 +50,17 @@ class _ProfileAboutScreenState extends BaseScreenState<ProfileAboutScreen> with 
             const SizedBox(
               height: 25,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                  GestureDetector(
-                    onTap: () {
-                      StackNavigator.instance.sendToScreen(context, ProfilePictureDetailScreen(url: "https://media.istockphoto.com/id/1171169127/photo/headshot-of-cheerful-handsome-man-with-trendy-haircut-and-eyeglasses-isolated-on-gray.jpg?b=1&s=170667a&w=0&k=20&c=ErOpmNtGDfh1N5xs34-cycSdTso18EvFHEIpcBZC9w0="));
-                    },
-                    child: ClipRRect(
-                      borderRadius: const BorderRadius.all(Radius.circular(12)),
-                      child: CustomImageView(url: 'https://media.istockphoto.com/id/1171169127/photo/headshot-of-cheerful-handsome-man-with-trendy-haircut-and-eyeglasses-isolated-on-gray.jpg?b=1&s=170667a&w=0&k=20&c=ErOpmNtGDfh1N5xs34-cycSdTso18EvFHEIpcBZC9w0=', height: 90, width: 90,),
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      StackNavigator.instance.sendToScreen(context, const EditProfileScreen());
-                    },
-                    child: Container(
-                      padding: const EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        color: Colours.blueAccent,
-                        borderRadius: BorderRadius.circular(7),
-                      ),
-                      child: Row(
-                        children: [
-                          const Icon(
-                            Iconsax.edit,
-                            color: Colours.white,
-                          ),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          CustomTextField(text: "Edit Profile", textColor: Colours.white, fontSize: 13, fontWeight: FontWeight.w600)
-                        ],
-                      ),
-                    ),
-                  ),
-              ],
+            GestureDetector(
+              onTap: () {
+                StackNavigator.instance.sendToScreen(context, ProfilePictureDetailScreen(url: "https://media.istockphoto.com/id/1171169127/photo/headshot-of-cheerful-handsome-man-with-trendy-haircut-and-eyeglasses-isolated-on-gray.jpg?b=1&s=170667a&w=0&k=20&c=ErOpmNtGDfh1N5xs34-cycSdTso18EvFHEIpcBZC9w0="));
+              },
+              child: Container(
+                alignment: Alignment.center,
+                child: ClipRRect(
+                  borderRadius: const BorderRadius.all(Radius.circular(12)),
+                  child: CustomImageView(url: 'https://media.istockphoto.com/id/1171169127/photo/headshot-of-cheerful-handsome-man-with-trendy-haircut-and-eyeglasses-isolated-on-gray.jpg?b=1&s=170667a&w=0&k=20&c=ErOpmNtGDfh1N5xs34-cycSdTso18EvFHEIpcBZC9w0=', height: 90, width: 90,),
+                ),
+              ),
             ),
             Container(
               margin: const EdgeInsets.only(top: 25),

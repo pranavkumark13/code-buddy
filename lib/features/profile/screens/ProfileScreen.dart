@@ -2,7 +2,7 @@
 import 'package:code_buddy/features/community/screens/MyCommunityScreen.dart';
 import 'package:code_buddy/features/payment/screens/PaymentHistoryScreen.dart';
 import 'package:code_buddy/features/payment/screens/PaymentMethodsScreen.dart';
-import 'package:code_buddy/features/profile/screens/MyDeveloperProfileScreen.dart';
+import 'package:code_buddy/features/profile/screens/MyProfessionalProfileScreen.dart';
 import 'package:code_buddy/features/profile/screens/ProfileAboutScreen.dart';
 import 'package:code_buddy/features/projects/screens/MyProjectsScreen.dart';
 import 'package:code_buddy/utils/StackNavigator.dart';
@@ -58,8 +58,8 @@ class _MyProfileScreenState extends BaseScreenState<MyProfileScreen> with BaseSc
           MenuListItem(itemName: 'My Communities', icon: Iconsax.people, onTap: () {
             StackNavigator.instance.sendToScreen(context, const MyCommunityScreen());
           },),
-          MenuListItem(itemName: 'My Dev Profile', icon: Iconsax.code, onTap: () {
-            StackNavigator.instance.sendToScreen(context, const MyDeveloperProfileScreen());
+          MenuListItem(itemName: 'My Professional Profile', icon: Iconsax.code, onTap: () {
+            StackNavigator.instance.sendToScreen(context, const MyProfessionalProfileScreen());
           },),
           MenuListItem(itemName: 'My Projects', icon: Iconsax.note, onTap: () {
             StackNavigator.instance.sendToScreen(context, const MyProjectsScreen());
