@@ -73,7 +73,7 @@ class _CommunityScreenState extends BaseScreenState<CommunityScreen> with BaseSc
         controller: tabController,
         children: [
           Container(),
-          Container()
+          Container(),
         ],
       ),
     );

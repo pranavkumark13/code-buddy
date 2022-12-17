@@ -36,23 +36,30 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
             height: 40,
           ),
           MenuListItem(itemName: 'Community', icon: Iconsax.people, onTap: () {
+            StackNavigator.instance.popScreen(context);
             StackNavigator.instance.sendToScreen(context, const CommunityScreen());
           },),
           MenuListItem(itemName: 'Bookmarks', icon: Iconsax.bookmark, onTap: () {
+            StackNavigator.instance.popScreen(context);
             StackNavigator.instance.sendToScreen(context, const MyBookmarksScreen());
           },),
           MenuListItem(itemName: 'Events', icon: Iconsax.calendar, onTap: () {
+            StackNavigator.instance.popScreen(context);
             StackNavigator.instance.sendToScreen(context, const EventsListingScreen());
           },),
           MenuListItem(itemName: 'Marketplace', icon: Iconsax.shop, onTap: () {
+            StackNavigator.instance.popScreen(context);
             StackNavigator.instance.sendToScreen(context, const MarketplaceScreen());
           },),
           MenuListItem(itemName: 'Feedback', icon: Iconsax.message_question, onTap: () {
+            StackNavigator.instance.popScreen(context);
           },),
           MenuListItem(itemName: 'FAQs', icon: Icons.question_answer_outlined, onTap: () {
+            StackNavigator.instance.popScreen(context);
             StackNavigator.instance.sendToScreen(context, const FAQScreen());
           },),
           MenuListItem(itemName: 'Settings', icon: Iconsax.setting, onTap: () {
+            StackNavigator.instance.popScreen(context);
             StackNavigator.instance.sendToScreen(context, const SettingsScreen());
           },),
         ],

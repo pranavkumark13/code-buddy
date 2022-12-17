@@ -18,6 +18,7 @@ class _ProfileHeaderViewState extends State<ProfileHeaderView> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        StackNavigator.instance.popScreen(context);
         StackNavigator.instance.sendToScreen(context, const MyProfileScreen());
       },
       child: Row(
