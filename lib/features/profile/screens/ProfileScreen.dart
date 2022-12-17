@@ -1,10 +1,10 @@
 // ignore_for_file: file_names, overridden_fields
-import 'package:code_buddy/features/community/screens/MyCommunityScreen.dart';
-import 'package:code_buddy/features/payment/screens/PaymentHistoryScreen.dart';
-import 'package:code_buddy/features/payment/screens/PaymentMethodsScreen.dart';
+import 'package:code_buddy/features/community/screens/CommunityScreen.dart';
+import 'package:code_buddy/features/events/screens/EventsListingScreen.dart';
+import 'package:code_buddy/features/marketplace/screens/MarketplaceScreen.dart';
 import 'package:code_buddy/features/profile/screens/MyProfessionalProfileScreen.dart';
 import 'package:code_buddy/features/profile/screens/ProfileAboutScreen.dart';
-import 'package:code_buddy/features/projects/screens/MyProjectsScreen.dart';
+import 'package:code_buddy/screens/MyBookmarksScreen.dart';
 import 'package:code_buddy/utils/StackNavigator.dart';
 import 'package:code_buddy/utils/BaseScreen.dart';
 import 'package:code_buddy/utils/BaseScreenState.dart';
@@ -55,20 +55,20 @@ class _MyProfileScreenState extends BaseScreenState<MyProfileScreen> with BaseSc
           MenuListItem(itemName: 'About Me', icon: Iconsax.user, onTap: () {
             StackNavigator.instance.sendToScreen(context, const ProfileAboutScreen());
           },),
-          MenuListItem(itemName: 'My Communities', icon: Iconsax.people, onTap: () {
-            StackNavigator.instance.sendToScreen(context, const MyCommunityScreen());
-          },),
           MenuListItem(itemName: 'My Professional Profile', icon: Iconsax.code, onTap: () {
             StackNavigator.instance.sendToScreen(context, const MyProfessionalProfileScreen());
           },),
-          MenuListItem(itemName: 'My Projects', icon: Iconsax.note, onTap: () {
-            StackNavigator.instance.sendToScreen(context, const MyProjectsScreen());
+          MenuListItem(itemName: 'Community', icon: Iconsax.people, onTap: () {
+            StackNavigator.instance.sendToScreen(context, const CommunityScreen());
           },),
-          MenuListItem(itemName: 'My Payment Methods', icon: Icons.payment, onTap: () {
-            StackNavigator.instance.sendToScreen(context, const PaymentMethodsScreen());
+          MenuListItem(itemName: 'Bookmarks', icon: Iconsax.bookmark, onTap: () {
+            StackNavigator.instance.sendToScreen(context, const MyBookmarksScreen());
           },),
-          MenuListItem(itemName: 'My Payment History', icon: Icons.history, onTap: () {
-            StackNavigator.instance.sendToScreen(context, const PaymentHistoryScreen());
+          MenuListItem(itemName: 'Events', icon: Iconsax.calendar, onTap: () {
+            StackNavigator.instance.sendToScreen(context, const EventsListingScreen());
+          },),
+          MenuListItem(itemName: 'Marketplace', icon: Iconsax.shop, onTap: () {
+            StackNavigator.instance.sendToScreen(context, const MarketplaceScreen());
           },),
         ],
       ),

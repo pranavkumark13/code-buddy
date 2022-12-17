@@ -1,5 +1,5 @@
 // ignore_for_file: file_names, overridden_fields
-import 'package:code_buddy/features/profile/screens/EditDeveloperProfile.dart';
+import 'package:code_buddy/features/profile/screens/EditProfileScreen.dart';
 import 'package:code_buddy/screens/ProfilePictureDetailScreen.dart';
 import 'package:code_buddy/utils/StackNavigator.dart';
 import 'package:code_buddy/utils/BaseScreen.dart';
@@ -28,7 +28,7 @@ class _ProfileAboutScreenState extends BaseScreenState<ProfileAboutScreen> with 
 
   @override
   List<Widget>? getActions() {
-    return [GestureDetector(onTap: () {StackNavigator.instance.sendToScreen(context, const EditDeveloperProfile());}, child: Container(margin: const EdgeInsets.only(right: 12), child: const Icon(Iconsax.edit, color: Colours.black,)))];
+    return [GestureDetector(onTap: () {StackNavigator.instance.sendToScreen(context, const EditProfileScreen());}, child: Container(margin: const EdgeInsets.only(right: 12), child: const Icon(Iconsax.edit, color: Colours.black,)))];
   }
 
   @override
@@ -68,7 +68,7 @@ class _ProfileAboutScreenState extends BaseScreenState<ProfileAboutScreen> with 
             ),
             Container(
               margin: const EdgeInsets.only(top: 12),
-              child: CustomTextWidget(text: "Pranav Kumar K")
+              child: CustomTextWidget(text: "Pranav Kumar K"),
             ),
             Container(
               margin: const EdgeInsets.only(top: 15),

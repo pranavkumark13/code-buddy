@@ -15,7 +15,7 @@ class _CustomTextWidgetState extends State<CustomTextWidget> {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: Colours.tintBlue,
         borderRadius: BorderRadius.circular(7),

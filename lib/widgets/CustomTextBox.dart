@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 class CustomTextBox extends StatefulWidget {
   TextEditingController textEditingController;
   TextInputType textInputType;
-  CustomTextBox({super.key, required this.textEditingController, required this.textInputType});
+  int? maxLines;
+  CustomTextBox({super.key, required this.textEditingController, required this.textInputType, this.maxLines});
 
   @override
   State<CustomTextBox> createState() => _CustomTextBoxState();
@@ -18,6 +19,7 @@ class _CustomTextBoxState extends State<CustomTextBox> {
       style: const TextStyle(
         color: Colours.black,
       ),
+      maxLines: widget.maxLines,
       showCursor: true,
       decoration: const InputDecoration(
         focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colours.borderColor)),

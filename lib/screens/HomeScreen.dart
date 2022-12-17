@@ -7,9 +7,9 @@ import 'package:code_buddy/features/notifications/screens/NotificationsScreen.da
 import 'package:code_buddy/features/profile/screens/ProfileScreen.dart';
 import 'package:code_buddy/features/search/screens/SearchScreen.dart';
 import 'package:code_buddy/utils/StackNavigator.dart';
+import 'package:code_buddy/widgets/CustomIcon.dart';
 import 'package:code_buddy/widgets/CustomImageView.dart';
 import 'package:code_buddy/widgets/CustomTextField.dart';
-import 'package:code_buddy/widgets/NavigationDrawer.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import '../utils/Colours.dart';
@@ -22,19 +22,26 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _bottomNavIndex = 0;
-  List<IconData> icons = [Iconsax.story, Icons.search , Icons.code , Iconsax.message, Iconsax.notification];
-  List<Widget> screens = [const FeedsScreen(), const SearchScreen() , const DeveloperHuntScreen(), const ChatScreen(), const NotificationsScreen()];
+  List<IconData> icons = [Iconsax.story, Icons.search , Icons.code , Iconsax.message];
+  List<Widget> screens = [const FeedsScreen(), const SearchScreen() , const DeveloperHuntScreen(), const ChatScreen()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colours.white,
-      endDrawer: const NavigationDrawer(),
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colours.black),
         backgroundColor: Colours.white,
         elevation: 0.0,
         title: getAppBarTitle(_bottomNavIndex),
         centerTitle: true,
+        actions: [
+          Container(
+            margin: const EdgeInsets.only(right: 15),
+            child: CustomIcon(iconData: Iconsax.notification, onTap: () {
+              StackNavigator.instance.sendToScreen(context, const NotificationsScreen());
+            }),
+          ),
+        ],
         leading: GestureDetector(
           onTap: () {
             StackNavigator.instance.sendToScreen(context, const MyProfileScreen());
@@ -75,8 +82,6 @@ class _HomeScreenState extends State<HomeScreen> {
         return CustomTextField(text: "Developer Hunt", textColor: Colours.black, fontSize: 16, fontWeight: FontWeight.w600);
       case 3:
         return CustomTextField(text: "Chats", textColor: Colours.black, fontSize: 16, fontWeight: FontWeight.w600);
-      case 4:
-        return CustomTextField(text: "Notifications", textColor: Colours.black, fontSize: 16, fontWeight: FontWeight.w600);
       default:
         print("Index not found");
         return null;

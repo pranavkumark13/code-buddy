@@ -44,7 +44,7 @@ class _EditDeveloperProfileState extends BaseScreenState<EditDeveloperProfile> w
 
   @override
   String appBarTitle() {
-    return "";
+    return "Edit your Professional details";
   }
 
   @override
