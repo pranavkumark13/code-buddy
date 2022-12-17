@@ -7,7 +7,7 @@ import 'package:code_buddy/utils/StackNavigator.dart';
 import 'package:code_buddy/utils/BaseScreen.dart';
 import 'package:code_buddy/utils/BaseScreenState.dart';
 import 'package:code_buddy/widgets/AlertDialog.dart';
-import 'package:code_buddy/widgets/SettingsListItem.dart';
+import 'package:code_buddy/widgets/MenuListItem.dart';
 import 'package:code_buddy/widgets/SwitchListItem.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
@@ -49,21 +49,21 @@ class _SettingsScreenState extends BaseScreenState<SettingsScreen> with BaseScre
             SwitchListItem(itemName: "Push Notifications", icon: Iconsax.notification, onChanged: (bool value) {
               isNotificationsEnabled = value;
             }),
-            SettingsListItem(itemName: "Account", icon: Iconsax.user, onTap: () {
+            MenuListItem(itemName: "Account", icon: Iconsax.user, onTap: () {
               StackNavigator.instance.sendToScreen(context, const AccountScreen());
             }),
-            SettingsListItem(itemName: "Theme", icon: Iconsax.brush, onTap: () {
+            MenuListItem(itemName: "Theme", icon: Iconsax.brush, onTap: () {
               StackNavigator.instance.sendToScreen(context, const ThemeScreen());
             }),
-            SettingsListItem(itemName: "Privacy Policy", icon: Icons.newspaper, onTap: () {}),
-            SettingsListItem(itemName: "Privacy Settings", icon: Iconsax.shield, onTap: () {
+            MenuListItem(itemName: "Privacy Policy", icon: Icons.newspaper, onTap: () {}),
+            MenuListItem(itemName: "Privacy Settings", icon: Iconsax.shield, onTap: () {
               StackNavigator.instance.sendToScreen(context, const PrivacySettingsScreen());
             }),
-            SettingsListItem(itemName: "Terms and Conditions", icon: Icons.menu, onTap: () {}),
-            SettingsListItem(itemName: "Contact Us", icon: Icons.email_outlined, onTap: () {}),
-            SettingsListItem(itemName: "Rate Us", icon: Iconsax.star, onTap: () {}),
-            SettingsListItem(itemName: "Share", icon: Iconsax.share, onTap: () {}),
-            SettingsListItem(itemName: "Log Out", icon: Iconsax.logout, onTap: () {
+            MenuListItem(itemName: "Terms and Conditions", icon: Icons.menu, onTap: () {}),
+            MenuListItem(itemName: "Contact Us", icon: Icons.email_outlined, onTap: () {}),
+            MenuListItem(itemName: "Rate Us", icon: Iconsax.star, onTap: () {}),
+            MenuListItem(itemName: "Share", icon: Iconsax.share, onTap: () {}),
+            MenuListItem(itemName: "Log Out", icon: Iconsax.logout, onTap: () {
               if(Platform.isAndroid){
                 showAndroidAlertDialog(context, "Log Out", "Are you sure you want to Log out?", "Yes", "No", (){
                   print("logout successful");

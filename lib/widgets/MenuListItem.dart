@@ -20,8 +20,7 @@ class _MenuListItemState extends State<MenuListItem> {
         widget.onTap.call();
       },
       child: Container(
-        margin: const EdgeInsets.only(left: 17, right: 17),
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(13),
         child: Row(
           children: [
             Container(

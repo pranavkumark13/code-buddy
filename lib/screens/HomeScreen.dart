@@ -4,12 +4,11 @@ import 'package:code_buddy/features/devhunt/screens/DeveloperHuntScreen.dart';
 import 'package:code_buddy/features/feed/screens/FeedsScreen.dart';
 import 'package:code_buddy/features/message/screens/ChatScreen.dart';
 import 'package:code_buddy/features/notifications/screens/NotificationsScreen.dart';
-import 'package:code_buddy/features/profile/screens/ProfileScreen.dart';
 import 'package:code_buddy/features/search/screens/SearchScreen.dart';
 import 'package:code_buddy/utils/StackNavigator.dart';
 import 'package:code_buddy/widgets/CustomIcon.dart';
-import 'package:code_buddy/widgets/CustomImageView.dart';
 import 'package:code_buddy/widgets/CustomTextField.dart';
+import 'package:code_buddy/widgets/NavigationDrawer.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import '../utils/Colours.dart';
@@ -42,22 +41,11 @@ class _HomeScreenState extends State<HomeScreen> {
             }),
           ),
         ],
-        leading: GestureDetector(
-          onTap: () {
-            StackNavigator.instance.sendToScreen(context, const MyProfileScreen());
-          },
-          child: Container(
-            margin: const EdgeInsets.only(left: 10, top: 7),
-            child: ClipRRect(
-              borderRadius: const BorderRadius.all(Radius.circular(12)),
-              child: CustomImageView(url: 'https://media.istockphoto.com/id/1171169127/photo/headshot-of-cheerful-handsome-man-with-trendy-haircut-and-eyeglasses-isolated-on-gray.jpg?b=1&s=170667a&w=0&k=20&c=ErOpmNtGDfh1N5xs34-cycSdTso18EvFHEIpcBZC9w0=', height: 100, width: 100),
-            ),
-          ),
-        ),
       ),
       body: Center(
           child: screens.elementAt(_bottomNavIndex),
       ),
+      drawer: const NavigationDrawer(),
       bottomNavigationBar: AnimatedBottomNavigationBar(
         icons: icons,
         activeIndex: _bottomNavIndex,

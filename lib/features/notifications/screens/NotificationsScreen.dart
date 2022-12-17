@@ -2,6 +2,7 @@
 import 'package:code_buddy/utils/StackNavigator.dart';
 import 'package:code_buddy/utils/BaseScreen.dart';
 import 'package:code_buddy/utils/BaseScreenState.dart';
+import 'package:code_buddy/widgets/CustomIcon.dart';
 import 'package:flutter/material.dart';
 
 class NotificationsScreen extends BasePageScreen {
@@ -15,11 +16,11 @@ class _NotificationsScreenState extends BaseScreenState<NotificationsScreen> wit
   
   @override
   String appBarTitle() {
-    return "";
+    return "Notifications";
   }
   
   @override
-  bool showAppBar = false;
+  bool showAppBar = true;
   
   @override
   void onClickBackButton() {
@@ -28,7 +29,22 @@ class _NotificationsScreenState extends BaseScreenState<NotificationsScreen> wit
 
   @override
   List<Widget>? getActions() {
-    return [];
+    return [
+      CustomIcon(
+        iconData: Icons.clear_all, 
+        onTap: () {},
+      ),
+      const SizedBox(
+        width: 15,
+      ),
+      CustomIcon(
+        iconData: Icons.read_more, 
+        onTap: () {},
+      ),
+      const SizedBox(
+        width: 10,
+      ),
+    ];
   }
   
   @override
