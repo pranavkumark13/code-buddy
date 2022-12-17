@@ -7,7 +7,7 @@ import 'package:code_buddy/utils/StackNavigator.dart';
 import 'package:code_buddy/utils/BaseScreen.dart';
 import 'package:code_buddy/utils/BaseScreenState.dart';
 import 'package:code_buddy/widgets/AlertDialog.dart';
-import 'package:code_buddy/widgets/MenuListItem.dart';
+import 'package:code_buddy/widgets/DrawerListItem.dart';
 import 'package:code_buddy/widgets/SwitchListItem.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
@@ -42,40 +42,37 @@ class _SettingsScreenState extends BaseScreenState<SettingsScreen> with BaseScre
   @override
   Widget body() {
     return SingleChildScrollView(
-      child: Container(
-        margin: const EdgeInsets.only(left: 15, right: 15),
-        child: Column(
-          children: [
-            SwitchListItem(itemName: "Push Notifications", icon: Iconsax.notification, onChanged: (bool value) {
-              isNotificationsEnabled = value;
-            }),
-            MenuListItem(itemName: "Account", icon: Iconsax.user, onTap: () {
-              StackNavigator.instance.sendToScreen(context, const AccountScreen());
-            }),
-            MenuListItem(itemName: "Theme", icon: Iconsax.brush, onTap: () {
-              StackNavigator.instance.sendToScreen(context, const ThemeScreen());
-            }),
-            MenuListItem(itemName: "Privacy Policy", icon: Icons.newspaper, onTap: () {}),
-            MenuListItem(itemName: "Privacy Settings", icon: Iconsax.shield, onTap: () {
-              StackNavigator.instance.sendToScreen(context, const PrivacySettingsScreen());
-            }),
-            MenuListItem(itemName: "Terms and Conditions", icon: Icons.menu, onTap: () {}),
-            MenuListItem(itemName: "Contact Us", icon: Icons.email_outlined, onTap: () {}),
-            MenuListItem(itemName: "Rate Us", icon: Iconsax.star, onTap: () {}),
-            MenuListItem(itemName: "Share", icon: Iconsax.share, onTap: () {}),
-            MenuListItem(itemName: "Log Out", icon: Iconsax.logout, onTap: () {
-              if(Platform.isAndroid){
-                showAndroidAlertDialog(context, "Log Out", "Are you sure you want to Log out?", "Yes", "No", (){
-                  print("logout successful");
-                });
-              }else{
-                showIOSAlertDialog(context, "Log Out", "Are you sure you want to Log out?", "Yes", "No", (){
-                  print("failed to logout");
-                });
-              }
-            }),
-          ],
-        ),
+    child: Column(
+        children: [
+          SwitchListItem(itemName: "Push Notifications", icon: Iconsax.notification, onChanged: (bool value) {
+            isNotificationsEnabled = value;
+          }),
+          DrawerListItem(itemName: "Account", icon: Iconsax.user, onTap: () {
+            StackNavigator.instance.sendToScreen(context, const AccountScreen());
+          }),
+          DrawerListItem(itemName: "Theme", icon: Iconsax.brush, onTap: () {
+            StackNavigator.instance.sendToScreen(context, const ThemeScreen());
+          }),
+          DrawerListItem(itemName: "Privacy Policy", icon: Icons.newspaper, onTap: () {}),
+          DrawerListItem(itemName: "Privacy Settings", icon: Iconsax.shield, onTap: () {
+            StackNavigator.instance.sendToScreen(context, const PrivacySettingsScreen());
+          }),
+          DrawerListItem(itemName: "Terms and Conditions", icon: Icons.menu, onTap: () {}),
+          DrawerListItem(itemName: "Contact Us", icon: Icons.email_outlined, onTap: () {}),
+          DrawerListItem(itemName: "Rate Us", icon: Iconsax.star, onTap: () {}),
+          DrawerListItem(itemName: "Share", icon: Iconsax.share, onTap: () {}),
+          DrawerListItem(itemName: "Log Out", icon: Iconsax.logout, onTap: () {
+            if(Platform.isAndroid){
+              showAndroidAlertDialog(context, "Log Out", "Are you sure you want to Log out?", "Yes", "No", (){
+                print("logout successful");
+              });
+            }else{
+              showIOSAlertDialog(context, "Log Out", "Are you sure you want to Log out?", "Yes", "No", (){
+                print("failed to logout");
+              });
+            }
+          }),
+        ],
       ),
     );
   }

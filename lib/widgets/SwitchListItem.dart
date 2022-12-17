@@ -22,7 +22,7 @@ class _SwitchListItemState extends State<SwitchListItem> {
   Widget build(BuildContext context) {
   return Container(
       width: MediaQuery.of(context).size.width,
-      padding: const EdgeInsets.all(13),
+      padding: const EdgeInsets.only(left: 16),
       child: Row(
         children: [
           CustomIcon(iconData: widget.icon, onTap: (){}),
