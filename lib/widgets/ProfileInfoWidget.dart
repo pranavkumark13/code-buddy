@@ -41,13 +41,17 @@ class _ProfileInfoWidgetState extends State<ProfileInfoWidget> {
         Center(
           child: Column(
             children: [
-              CustomTextField(text: 'Pranav Kumar K', textColor: Colours.blueAccent, fontSize: 17, fontWeight: FontWeight.w600),
+              CustomTextField(text: 'Harry Brooks', textColor: Colours.blueAccent, fontSize: 17, fontWeight: FontWeight.w600),
               const SizedBox(
                 height: 2,
               ),
-              CustomTextField(text: 'iOS Developer', textColor: Colours.grey, fontSize: 15, fontWeight: FontWeight.normal),
+              CustomTextField(text: 'Android Developer', textColor: Colours.grey, fontSize: 15, fontWeight: FontWeight.normal),
               const SizedBox(
                 height: 15,
+              ),
+              CustomTextField(text: '+ Follow', textColor: Colours.black, fontSize: 18, fontWeight: FontWeight.bold),
+              const SizedBox(
+                height: 20,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,

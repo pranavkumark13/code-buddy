@@ -63,7 +63,9 @@ class _MyProfileScreenState extends BaseScreenState<MyProfileScreen> with BaseSc
       headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
         return [
           SliverAppBar(
-            pinned: false,
+            pinned: true,
+            snap: true,
+            floating: true,
             backgroundColor: Colours.white,
             flexibleSpace: FlexibleSpaceBar(
               collapseMode: CollapseMode.pin,
@@ -76,7 +78,7 @@ class _MyProfileScreenState extends BaseScreenState<MyProfileScreen> with BaseSc
                 ],
               ),
             ),
-            expandedHeight: 300.0,
+            expandedHeight: 340.0,
             bottom: TabBar(
               indicatorColor: Colours.blueAccent,
               labelColor: Colours.blueAccent,
@@ -107,45 +109,3 @@ class _MyProfileScreenState extends BaseScreenState<MyProfileScreen> with BaseSc
     );
   }
 } 
-
-
-/*
-
-SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const ProfileInfoWidget(),
-          const SizedBox(
-            height: 15,
-          ),
-          TabBar(
-              controller: tabController,
-              labelColor: Colours.blueAccent,
-              isScrollable: false,
-              tabs: const [
-                Tab(
-                  child: Text(
-                    "Info",
-                    style: TextStyle(color: Colors.black),
-                  ),
-                ),
-                Tab(
-                  child: Text(
-                    "Posts",
-                    style: TextStyle(color: Colors.black),
-                  ),
-                ),
-                Tab(
-                  child: Text(
-                    "Bookmarks",
-                    style: TextStyle(color: Colors.black),
-                  ),
-                ),
-              ],
-            ),
-        ],
-      ),
-    );
-
-*/

@@ -1,6 +1,6 @@
 // ignore_for_file: file_names, avoid_print
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
-import 'package:code_buddy/features/devhunt/screens/DeveloperHuntScreen.dart';
+import 'package:code_buddy/features/buddyhunt/screens/BuddyHuntScreen.dart';
 import 'package:code_buddy/features/feed/screens/FeedsScreen.dart';
 import 'package:code_buddy/features/message/screens/ChatScreen.dart';
 import 'package:code_buddy/features/notifications/screens/NotificationsScreen.dart';
@@ -22,7 +22,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _bottomNavIndex = 0;
   List<IconData> icons = [Iconsax.story, Icons.search , Icons.code , Iconsax.message];
-  List<Widget> screens = [const FeedsScreen(), const SearchScreen() , const DeveloperHuntScreen(), const ChatScreen()];
+  List<Widget> screens = [const FeedsScreen(), const SearchScreen() , const BuddyHuntScreen(), const ChatScreen()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
       case 1:
         return CustomTextField(text: "Search", textColor: Colours.black, fontSize: 16, fontWeight: FontWeight.w600);
       case 2:
-        return CustomTextField(text: "Developer Hunt", textColor: Colours.black, fontSize: 16, fontWeight: FontWeight.w600);
+        return CustomTextField(text: "Buddy Hunt", textColor: Colours.black, fontSize: 16, fontWeight: FontWeight.w600);
       case 3:
         return CustomTextField(text: "Chats", textColor: Colours.black, fontSize: 16, fontWeight: FontWeight.w600);
       default:
