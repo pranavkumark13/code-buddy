@@ -2,7 +2,6 @@
 import 'package:code_buddy/features/community/screens/CommunityScreen.dart';
 import 'package:code_buddy/features/events/screens/EventsListingScreen.dart';
 import 'package:code_buddy/features/marketplace/screens/MarketplaceScreen.dart';
-import 'package:code_buddy/screens/FAQScreen.dart';
 import 'package:code_buddy/screens/SettingsScreen.dart';
 import 'package:code_buddy/utils/StackNavigator.dart';
 import 'package:code_buddy/utils/Colours.dart';
@@ -46,13 +45,16 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
             StackNavigator.instance.popScreen(context);
             StackNavigator.instance.sendToScreen(context, const MarketplaceScreen());
           },),
-          MenuListItem(itemName: 'Feedback', icon: Iconsax.message_question, onTap: () {
-            StackNavigator.instance.popScreen(context);
-          },),
-          MenuListItem(itemName: 'FAQs', icon: Icons.question_answer_outlined, onTap: () {
-            StackNavigator.instance.popScreen(context);
-            StackNavigator.instance.sendToScreen(context, const FAQScreen());
-          },),
+          const SizedBox(
+            height: 20,
+          ),
+          const Divider(
+            color: Colours.grey,
+            height: 1,
+          ),
+          const SizedBox(
+            height: 15,
+          ),
           MenuListItem(itemName: 'Settings', icon: Iconsax.setting, onTap: () {
             StackNavigator.instance.popScreen(context);
             StackNavigator.instance.sendToScreen(context, const SettingsScreen());

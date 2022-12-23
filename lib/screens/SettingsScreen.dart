@@ -1,6 +1,7 @@
 // ignore_for_file: file_names, overridden_fields, avoid_print
 import 'dart:io';
 import 'package:code_buddy/screens/AccountScreen.dart';
+import 'package:code_buddy/screens/FAQScreen.dart';
 import 'package:code_buddy/screens/PrivacySettingsScreen.dart';
 import 'package:code_buddy/screens/ThemeScreen.dart';
 import 'package:code_buddy/utils/StackNavigator.dart';
@@ -57,6 +58,11 @@ class _SettingsScreenState extends BaseScreenState<SettingsScreen> with BaseScre
           DrawerListItem(itemName: "Privacy Settings", icon: Iconsax.shield, onTap: () {
             StackNavigator.instance.sendToScreen(context, const PrivacySettingsScreen());
           }),
+          DrawerListItem(itemName: "About Us", icon: Icons.info_outlined, onTap: () {}),
+          DrawerListItem(itemName: 'Feedback', icon: Iconsax.message_question, onTap: () {},),
+          DrawerListItem(itemName: 'FAQs', icon: Icons.question_answer_outlined, onTap: () {
+            StackNavigator.instance.sendToScreen(context, const FAQScreen());
+          },),
           DrawerListItem(itemName: "Terms and Conditions", icon: Icons.menu, onTap: () {}),
           DrawerListItem(itemName: "Contact Us", icon: Icons.email_outlined, onTap: () {}),
           DrawerListItem(itemName: "Rate Us", icon: Iconsax.star, onTap: () {}),

@@ -4,14 +4,14 @@ import 'package:code_buddy/utils/BaseScreen.dart';
 import 'package:code_buddy/utils/BaseScreenState.dart';
 import 'package:flutter/material.dart';
 
-class BuddyHuntScreen extends BasePageScreen {
-  const BuddyHuntScreen({super.key});
+class ConnectScreen extends BasePageScreen {
+  const ConnectScreen({super.key});
 
   @override
-  State<BuddyHuntScreen> createState() => _BuddyHuntScreenState();
+  State<ConnectScreen> createState() => _ConnectScreenState();
 }
 
-class _BuddyHuntScreenState extends BaseScreenState<BuddyHuntScreen> with BaseScreen {
+class _ConnectScreenState extends BaseScreenState<ConnectScreen> with BaseScreen {
   
   @override
   String appBarTitle() {

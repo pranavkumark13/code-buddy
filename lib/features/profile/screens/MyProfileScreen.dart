@@ -2,6 +2,7 @@
 import 'package:code_buddy/features/profile/screens/BookmarksTabScreen.dart';
 import 'package:code_buddy/features/profile/screens/EditProfileScreen.dart';
 import 'package:code_buddy/features/profile/screens/InfoTabScreen.dart';
+import 'package:code_buddy/features/profile/screens/LikedTabScreen.dart';
 import 'package:code_buddy/features/profile/screens/PostsTabScreen.dart';
 import 'package:code_buddy/utils/Colours.dart';
 import 'package:code_buddy/utils/StackNavigator.dart';
@@ -26,7 +27,7 @@ class _MyProfileScreenState extends BaseScreenState<MyProfileScreen> with BaseSc
 
   @override
   void initState() {
-    tabController = TabController(length: 3, vsync: this);
+    tabController = TabController(length: 4, vsync: this);
     super.initState();
   }
 
@@ -82,6 +83,7 @@ class _MyProfileScreenState extends BaseScreenState<MyProfileScreen> with BaseSc
             bottom: TabBar(
               indicatorColor: Colours.blueAccent,
               labelColor: Colours.blueAccent,
+              isScrollable: true,
               tabs: [
                 Tab(
                   child: CustomTextField(text: "Info", textColor: Colours.black, fontSize: 14, fontWeight: FontWeight.w600,),
@@ -91,6 +93,9 @@ class _MyProfileScreenState extends BaseScreenState<MyProfileScreen> with BaseSc
                 ),
                 Tab(
                   child: CustomTextField(text: "Bookmarks", textColor: Colours.black, fontSize: 14, fontWeight: FontWeight.w600,),
+                ),
+                Tab(
+                  child: CustomTextField(text: "Liked", textColor: Colours.black, fontSize: 14, fontWeight: FontWeight.w600,),
                 ),
               ],
               controller: tabController,
@@ -104,6 +109,7 @@ class _MyProfileScreenState extends BaseScreenState<MyProfileScreen> with BaseSc
           InfoTabScreen(),
           PostsTabScreen(),
           BookmarksTabScreen(),
+          LikedTabScreen(),
         ],
       ),
     );
