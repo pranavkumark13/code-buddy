@@ -1,9 +1,9 @@
 // ignore_for_file: file_names, overridden_fields
-import 'package:code_buddy/features/profile/screens/BookmarksTabScreen.dart';
+import 'package:code_buddy/features/profile/screens/MyProfileBookmarksTabScreen.dart';
 import 'package:code_buddy/features/profile/screens/EditProfileScreen.dart';
-import 'package:code_buddy/features/profile/screens/InfoTabScreen.dart';
-import 'package:code_buddy/features/profile/screens/LikedTabScreen.dart';
-import 'package:code_buddy/features/profile/screens/PostsTabScreen.dart';
+import 'package:code_buddy/features/profile/screens/MyProfileInfoTabScreen.dart';
+import 'package:code_buddy/features/profile/screens/MyProfileLikedTabScreen.dart';
+import 'package:code_buddy/features/profile/screens/MyProfilePostsTabScreen.dart';
 import 'package:code_buddy/utils/Colours.dart';
 import 'package:code_buddy/utils/StackNavigator.dart';
 import 'package:code_buddy/utils/BaseScreen.dart';
@@ -106,10 +106,10 @@ class _MyProfileScreenState extends BaseScreenState<MyProfileScreen> with BaseSc
       body: TabBarView(
         controller: tabController,
         children: const [
-          InfoTabScreen(),
-          PostsTabScreen(),
-          BookmarksTabScreen(),
-          LikedTabScreen(),
+          MyProfileInfoTabScreen(),
+          MyProfilePostsTabScreen(),
+          MyProfileBookmarksTabScreen(),
+          MyProfileLikedTabScreen(),
         ],
       ),
     );

@@ -5,7 +5,7 @@ import 'package:code_buddy/features/marketplace/screens/MarketplaceScreen.dart';
 import 'package:code_buddy/screens/SettingsScreen.dart';
 import 'package:code_buddy/utils/StackNavigator.dart';
 import 'package:code_buddy/utils/Colours.dart';
-import 'package:code_buddy/widgets/MenuListItem.dart';
+import 'package:code_buddy/widgets/DrawerListItem.dart';
 import 'package:code_buddy/widgets/ProfileHeaderView.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
@@ -33,15 +33,15 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
           const SizedBox(
             height: 40,
           ),
-          MenuListItem(itemName: 'Community', icon: Iconsax.people, onTap: () {
+          DrawerListItem(itemName: 'Community', icon: Iconsax.people, onTap: () {
             StackNavigator.instance.popScreen(context);
             StackNavigator.instance.sendToScreen(context, const CommunityScreen());
           },),
-          MenuListItem(itemName: 'Events', icon: Iconsax.calendar, onTap: () {
+          DrawerListItem(itemName: 'Events', icon: Iconsax.calendar, onTap: () {
             StackNavigator.instance.popScreen(context);
             StackNavigator.instance.sendToScreen(context, const EventsListingScreen());
           },),
-          MenuListItem(itemName: 'Marketplace', icon: Iconsax.shop, onTap: () {
+          DrawerListItem(itemName: 'Marketplace', icon: Iconsax.shop, onTap: () {
             StackNavigator.instance.popScreen(context);
             StackNavigator.instance.sendToScreen(context, const MarketplaceScreen());
           },),
@@ -55,7 +55,7 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
           const SizedBox(
             height: 15,
           ),
-          MenuListItem(itemName: 'Settings', icon: Iconsax.setting, onTap: () {
+          DrawerListItem(itemName: 'Settings', icon: Iconsax.setting, onTap: () {
             StackNavigator.instance.popScreen(context);
             StackNavigator.instance.sendToScreen(context, const SettingsScreen());
           },),

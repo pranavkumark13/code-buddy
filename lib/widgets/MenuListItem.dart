@@ -27,7 +27,7 @@ class _MenuListItemState extends State<MenuListItem> {
               padding: const EdgeInsets.all(7),
               decoration: BoxDecoration(
                 color: Colours.blueAccent,
-                borderRadius: BorderRadius.circular(7),
+                borderRadius: BorderRadius.circular(30),
               ),
               child:  Icon(
                 widget.icon,

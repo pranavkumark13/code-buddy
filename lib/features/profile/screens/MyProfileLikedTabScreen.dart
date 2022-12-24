@@ -4,14 +4,14 @@ import 'package:code_buddy/utils/BaseScreen.dart';
 import 'package:code_buddy/utils/BaseScreenState.dart';
 import 'package:flutter/material.dart';
 
-class PostsTabScreen extends BasePageScreen {
-  const PostsTabScreen({super.key});
+class MyProfileLikedTabScreen extends BasePageScreen {
+  const MyProfileLikedTabScreen({super.key});
 
   @override
-  State<PostsTabScreen> createState() => _PostsTabScreenState();
+  State<MyProfileLikedTabScreen> createState() => _MyProfileLikedTabScreenState();
 }
 
-class _PostsTabScreenState extends BaseScreenState<PostsTabScreen> with BaseScreen {
+class _MyProfileLikedTabScreenState extends BaseScreenState<MyProfileLikedTabScreen> with BaseScreen {
   
   @override
   String appBarTitle() {

@@ -1,7 +1,9 @@
 // ignore_for_file: file_names
+import 'package:code_buddy/features/feed/screens/CreateFeedScreen.dart';
 import 'package:code_buddy/utils/StackNavigator.dart';
 import 'package:code_buddy/utils/BaseScreen.dart';
 import 'package:code_buddy/utils/BaseScreenState.dart';
+import 'package:code_buddy/widgets/CreateFeedWidget.dart';
 import 'package:flutter/material.dart';
 
 class FeedsScreen extends BasePageScreen {
@@ -30,8 +32,20 @@ class _FeedsScreenState extends BaseScreenState<FeedsScreen> with BaseScreen {
   
   @override
   Widget body() {
-    return const Center(
-      child: Text("See feeds to show them to the community/anyone"),
+    return SingleChildScrollView(
+      child: Container(
+        margin: const EdgeInsets.only(left: 15, right: 15, top: 10),
+        child: Column(
+          children: [
+            GestureDetector(
+              onTap: () {
+                StackNavigator.instance.sendToScreen(context, const CreateFeedScreen());
+              },
+              child: const CreateFeedWidget(),
+            ),
+          ],
+        ),
+      ),
     );
   }
 } 

@@ -9,6 +9,7 @@ import 'package:code_buddy/utils/StackNavigator.dart';
 import 'package:code_buddy/widgets/CustomIcon.dart';
 import 'package:code_buddy/widgets/CustomTextField.dart';
 import 'package:code_buddy/widgets/NavigationDrawer.dart';
+import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import '../utils/Colours.dart';
@@ -21,7 +22,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _bottomNavIndex = 0;
-  List<IconData> icons = [Iconsax.story, Icons.search , Icons.code , Iconsax.message];
+  List<IconData> icons = [Iconsax.story, EvaIcons.search , EvaIcons.compassOutline , EvaIcons.messageCircleOutline];
   List<Widget> screens = [const FeedsScreen(), const SearchScreen() , const ConnectScreen(), const ChatScreen()];
   @override
   Widget build(BuildContext context) {

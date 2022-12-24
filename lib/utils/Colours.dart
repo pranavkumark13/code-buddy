@@ -10,4 +10,5 @@ class Colours {
   static const lightGrey = Color.fromARGB(255, 203, 203, 203);
   static const tintBlue = Color.fromARGB(255, 216, 236, 255);
   static const borderColor = Color.fromARGB(255, 179, 177, 177);
+  static var tintGrey = Colors.grey[100];
 }

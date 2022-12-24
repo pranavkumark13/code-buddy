@@ -5,7 +5,9 @@ class CustomIcon extends StatelessWidget {
   IconData iconData;
   Function onTap;
   EdgeInsetsGeometry? margin;
-  CustomIcon({super.key, required this.iconData, required this.onTap});
+  double? iconSize;
+  Color? iconColor;
+  CustomIcon({super.key, required this.iconData, required this.onTap, this.iconSize, this.iconColor = Colours.black});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,8 @@ class CustomIcon extends StatelessWidget {
         margin: margin,
         child: Icon(
           iconData,
-          color: Colours.black,
+          color: iconColor,
+          size: iconSize,
         ),
       ),
     );
