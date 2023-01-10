@@ -3,6 +3,7 @@ import 'package:code_buddy/utils/StackNavigator.dart';
 import 'package:code_buddy/utils/BaseScreen.dart';
 import 'package:code_buddy/utils/BaseScreenState.dart';
 import 'package:code_buddy/widgets/CustomIcon.dart';
+import 'package:code_buddy/widgets/Separator.dart';
 import 'package:flutter/material.dart';
 
 class NotificationsScreen extends BasePageScreen {
@@ -12,16 +13,16 @@ class NotificationsScreen extends BasePageScreen {
   State<NotificationsScreen> createState() => _NotificationsScreenState();
 }
 
-class _NotificationsScreenState extends BaseScreenState<NotificationsScreen> with BaseScreen {
-  
+class _NotificationsScreenState extends BaseScreenState<NotificationsScreen>
+    with BaseScreen {
   @override
   String appBarTitle() {
     return "Notifications";
   }
-  
+
   @override
   bool showAppBar = true;
-  
+
   @override
   void onClickBackButton() {
     StackNavigator.instance.popScreen(context);
@@ -31,24 +32,24 @@ class _NotificationsScreenState extends BaseScreenState<NotificationsScreen> wit
   List<Widget>? getActions() {
     return [
       CustomIcon(
-        iconData: Icons.clear_all, 
+        iconData: Icons.clear_all,
         onTap: () {},
       ),
-      const SizedBox(
+      Separator(
         width: 15,
       ),
       CustomIcon(
-        iconData: Icons.read_more, 
+        iconData: Icons.read_more,
         onTap: () {},
       ),
-      const SizedBox(
+      Separator(
         width: 10,
       ),
     ];
   }
-  
+
   @override
   Widget body() {
     return Container();
   }
-} 
+}

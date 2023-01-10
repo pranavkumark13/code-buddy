@@ -7,8 +7,10 @@ import 'package:code_buddy/utils/StackNavigator.dart';
 import 'package:code_buddy/utils/Colours.dart';
 import 'package:code_buddy/widgets/DrawerListItem.dart';
 import 'package:code_buddy/widgets/ProfileHeaderView.dart';
+import 'package:code_buddy/widgets/Separator.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+
 class NavigationDrawer extends StatefulWidget {
   const NavigationDrawer({super.key});
 
@@ -23,42 +25,62 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
       backgroundColor: Colours.white,
       child: Column(
         children: [
-          const SizedBox(
+          Separator(
             height: 55,
           ),
           Container(
             margin: const EdgeInsets.only(left: 10, top: 7),
             child: const ProfileHeaderView(),
           ),
-          const SizedBox(
+          Separator(
             height: 40,
           ),
-          DrawerListItem(itemName: 'Community', icon: Iconsax.people, onTap: () {
-            StackNavigator.instance.popScreen(context);
-            StackNavigator.instance.sendToScreen(context, const CommunityScreen());
-          },),
-          DrawerListItem(itemName: 'Events', icon: Iconsax.calendar, onTap: () {
-            StackNavigator.instance.popScreen(context);
-            StackNavigator.instance.sendToScreen(context, const EventsListingScreen());
-          },),
-          DrawerListItem(itemName: 'Marketplace', icon: Iconsax.shop, onTap: () {
-            StackNavigator.instance.popScreen(context);
-            StackNavigator.instance.sendToScreen(context, const MarketplaceScreen());
-          },),
-          const SizedBox(
+          DrawerListItem(
+            itemName: 'Community',
+            icon: Iconsax.people,
+            onTap: () {
+              StackNavigator.instance.popScreen(context);
+              StackNavigator.instance
+                  .sendToScreen(context, const CommunityScreen());
+            },
+          ),
+          DrawerListItem(
+            itemName: 'Events',
+            icon: Iconsax.calendar,
+            onTap: () {
+              StackNavigator.instance.popScreen(context);
+              StackNavigator.instance
+                  .sendToScreen(context, const EventsListingScreen());
+            },
+          ),
+          DrawerListItem(
+            itemName: 'Marketplace',
+            icon: Iconsax.shop,
+            onTap: () {
+              StackNavigator.instance.popScreen(context);
+              StackNavigator.instance
+                  .sendToScreen(context, const MarketplaceScreen());
+            },
+          ),
+          Separator(
             height: 20,
           ),
           const Divider(
             color: Colours.grey,
             height: 1,
           ),
-          const SizedBox(
+          Separator(
             height: 15,
           ),
-          DrawerListItem(itemName: 'Settings', icon: Iconsax.setting, onTap: () {
-            StackNavigator.instance.popScreen(context);
-            StackNavigator.instance.sendToScreen(context, const SettingsScreen());
-          },),
+          DrawerListItem(
+            itemName: 'Settings',
+            icon: Iconsax.setting,
+            onTap: () {
+              StackNavigator.instance.popScreen(context);
+              StackNavigator.instance
+                  .sendToScreen(context, const SettingsScreen());
+            },
+          ),
         ],
       ),
     );

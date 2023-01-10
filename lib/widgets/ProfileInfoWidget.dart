@@ -6,6 +6,7 @@ import 'package:code_buddy/utils/Colours.dart';
 import 'package:code_buddy/utils/StackNavigator.dart';
 import 'package:code_buddy/widgets/CustomImageView.dart';
 import 'package:code_buddy/widgets/CustomTextField.dart';
+import 'package:code_buddy/widgets/Separator.dart';
 import 'package:flutter/material.dart';
 
 class ProfileInfoWidget extends StatefulWidget {
@@ -20,37 +21,59 @@ class _ProfileInfoWidgetState extends State<ProfileInfoWidget> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(
+        Separator(
           height: 20,
         ),
         GestureDetector(
           onTap: () {
-            StackNavigator.instance.sendToScreen(context, ProfilePictureDetailScreen(url: "https://media.istockphoto.com/id/1171169127/photo/headshot-of-cheerful-handsome-man-with-trendy-haircut-and-eyeglasses-isolated-on-gray.jpg?b=1&s=170667a&w=0&k=20&c=ErOpmNtGDfh1N5xs34-cycSdTso18EvFHEIpcBZC9w0=",));
+            StackNavigator.instance.sendToScreen(
+                context,
+                ProfilePictureDetailScreen(
+                  url:
+                      "https://media.istockphoto.com/id/1171169127/photo/headshot-of-cheerful-handsome-man-with-trendy-haircut-and-eyeglasses-isolated-on-gray.jpg?b=1&s=170667a&w=0&k=20&c=ErOpmNtGDfh1N5xs34-cycSdTso18EvFHEIpcBZC9w0=",
+                ));
           },
           child: Container(
             alignment: Alignment.center,
             child: ClipRRect(
-                borderRadius: const BorderRadius.all(Radius.circular(12)),
-                child: CustomImageView(url: 'https://media.istockphoto.com/id/1171169127/photo/headshot-of-cheerful-handsome-man-with-trendy-haircut-and-eyeglasses-isolated-on-gray.jpg?b=1&s=170667a&w=0&k=20&c=ErOpmNtGDfh1N5xs34-cycSdTso18EvFHEIpcBZC9w0=', height: 90, width: 90,),
+              borderRadius: const BorderRadius.all(Radius.circular(12)),
+              child: CustomImageView(
+                url:
+                    'https://media.istockphoto.com/id/1171169127/photo/headshot-of-cheerful-handsome-man-with-trendy-haircut-and-eyeglasses-isolated-on-gray.jpg?b=1&s=170667a&w=0&k=20&c=ErOpmNtGDfh1N5xs34-cycSdTso18EvFHEIpcBZC9w0=',
+                height: 90,
+                width: 90,
               ),
+            ),
           ),
         ),
-        const SizedBox(
+        Separator(
           height: 10,
         ),
         Center(
           child: Column(
             children: [
-              CustomTextField(text: 'Harry Brooks', textColor: Colours.blueAccent, fontSize: 17, fontWeight: FontWeight.w600),
-              const SizedBox(
+              CustomTextField(
+                  text: 'Harry Brooks',
+                  textColor: Colours.blueAccent,
+                  fontSize: 17,
+                  fontWeight: FontWeight.w600),
+              Separator(
                 height: 2,
               ),
-              CustomTextField(text: 'Android Developer', textColor: Colours.grey, fontSize: 15, fontWeight: FontWeight.normal),
-              const SizedBox(
+              CustomTextField(
+                  text: 'Android Developer',
+                  textColor: Colours.grey,
+                  fontSize: 15,
+                  fontWeight: FontWeight.normal),
+              Separator(
                 height: 15,
               ),
-              CustomTextField(text: '+ Follow', textColor: Colours.black, fontSize: 18, fontWeight: FontWeight.bold),
-              const SizedBox(
+              CustomTextField(
+                  text: '+ Follow',
+                  textColor: Colours.black,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold),
+              Separator(
                 height: 20,
               ),
               Row(
@@ -58,29 +81,55 @@ class _ProfileInfoWidgetState extends State<ProfileInfoWidget> {
                 children: [
                   Column(
                     children: [
-                      CustomTextField(text: "10", textColor: Colours.black, fontSize: 16, fontWeight: FontWeight.bold),
-                      CustomTextField(text: "Posts", textColor: Colours.black, fontSize: 14, fontWeight: FontWeight.normal),
+                      CustomTextField(
+                          text: "10",
+                          textColor: Colours.black,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold),
+                      CustomTextField(
+                          text: "Posts",
+                          textColor: Colours.black,
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal),
                     ],
                   ),
                   GestureDetector(
                     onTap: () {
-                      StackNavigator.instance.sendToScreen(context, const MyFollowersScreen());
+                      StackNavigator.instance
+                          .sendToScreen(context, const MyFollowersScreen());
                     },
                     child: Column(
                       children: [
-                        CustomTextField(text: "220", textColor: Colours.black, fontSize: 16, fontWeight: FontWeight.bold),
-                        CustomTextField(text: "Followers", textColor: Colours.black, fontSize: 14, fontWeight: FontWeight.normal),
+                        CustomTextField(
+                            text: "220",
+                            textColor: Colours.black,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold),
+                        CustomTextField(
+                            text: "Followers",
+                            textColor: Colours.black,
+                            fontSize: 14,
+                            fontWeight: FontWeight.normal),
                       ],
                     ),
                   ),
                   GestureDetector(
                     onTap: () {
-                      StackNavigator.instance.sendToScreen(context, const MyFollowingScreen());
+                      StackNavigator.instance
+                          .sendToScreen(context, const MyFollowingScreen());
                     },
                     child: Column(
                       children: [
-                        CustomTextField(text: "220", textColor: Colours.black, fontSize: 16, fontWeight: FontWeight.bold),
-                        CustomTextField(text: "Following", textColor: Colours.black, fontSize: 14, fontWeight: FontWeight.normal),
+                        CustomTextField(
+                            text: "220",
+                            textColor: Colours.black,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold),
+                        CustomTextField(
+                            text: "Following",
+                            textColor: Colours.black,
+                            fontSize: 14,
+                            fontWeight: FontWeight.normal),
                       ],
                     ),
                   ),

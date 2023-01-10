@@ -11,6 +11,7 @@ import 'package:code_buddy/utils/BaseScreenState.dart';
 import 'package:code_buddy/widgets/CustomIcon.dart';
 import 'package:code_buddy/widgets/CustomTextField.dart';
 import 'package:code_buddy/widgets/ProfileInfoWidget.dart';
+import 'package:code_buddy/widgets/Separator.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -21,8 +22,8 @@ class MyProfileScreen extends BasePageScreen {
   State<MyProfileScreen> createState() => _MyProfileScreenState();
 }
 
-class _MyProfileScreenState extends BaseScreenState<MyProfileScreen> with BaseScreen, TickerProviderStateMixin {
-  
+class _MyProfileScreenState extends BaseScreenState<MyProfileScreen>
+    with BaseScreen, TickerProviderStateMixin {
   late TabController tabController;
 
   @override
@@ -42,9 +43,13 @@ class _MyProfileScreenState extends BaseScreenState<MyProfileScreen> with BaseSc
       Container(
         margin: const EdgeInsets.only(right: 10),
         child: GestureDetector(
-          child: CustomIcon(iconData: Iconsax.edit, onTap: () {
-            StackNavigator.instance.sendToScreen(context, const EditProfileScreen());
-          },),
+          child: CustomIcon(
+            iconData: Iconsax.edit,
+            onTap: () {
+              StackNavigator.instance
+                  .sendToScreen(context, const EditProfileScreen());
+            },
+          ),
         ),
       ),
     ];
@@ -52,12 +57,12 @@ class _MyProfileScreenState extends BaseScreenState<MyProfileScreen> with BaseSc
 
   @override
   bool showAppBar = true;
-  
+
   @override
   void onClickBackButton() {
     StackNavigator.instance.popScreen(context);
   }
-  
+
   @override
   Widget body() {
     return NestedScrollView(
@@ -71,9 +76,9 @@ class _MyProfileScreenState extends BaseScreenState<MyProfileScreen> with BaseSc
             flexibleSpace: FlexibleSpaceBar(
               collapseMode: CollapseMode.pin,
               background: Column(
-                children: const [
-                  ProfileInfoWidget(),
-                  SizedBox(
+                children: [
+                  const ProfileInfoWidget(),
+                  Separator(
                     height: 15,
                   ),
                 ],
@@ -86,16 +91,36 @@ class _MyProfileScreenState extends BaseScreenState<MyProfileScreen> with BaseSc
               isScrollable: true,
               tabs: [
                 Tab(
-                  child: CustomTextField(text: "Info", textColor: Colours.black, fontSize: 14, fontWeight: FontWeight.w600,),
+                  child: CustomTextField(
+                    text: "Info",
+                    textColor: Colours.black,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
                 Tab(
-                  child: CustomTextField(text: "Posts", textColor: Colours.black, fontSize: 14, fontWeight: FontWeight.w600,),
+                  child: CustomTextField(
+                    text: "Posts",
+                    textColor: Colours.black,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
                 Tab(
-                  child: CustomTextField(text: "Bookmarks", textColor: Colours.black, fontSize: 14, fontWeight: FontWeight.w600,),
+                  child: CustomTextField(
+                    text: "Bookmarks",
+                    textColor: Colours.black,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
                 Tab(
-                  child: CustomTextField(text: "Liked", textColor: Colours.black, fontSize: 14, fontWeight: FontWeight.w600,),
+                  child: CustomTextField(
+                    text: "Liked",
+                    textColor: Colours.black,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ],
               controller: tabController,
@@ -114,4 +139,4 @@ class _MyProfileScreenState extends BaseScreenState<MyProfileScreen> with BaseSc
       ),
     );
   }
-} 
+}

@@ -8,6 +8,7 @@ import 'package:code_buddy/utils/BaseScreenState.dart';
 import 'package:code_buddy/widgets/CustomTextField.dart';
 import 'package:code_buddy/widgets/LocalImageView.dart';
 import 'package:code_buddy/widgets/ProfileInfoWidget.dart';
+import 'package:code_buddy/widgets/Separator.dart';
 import 'package:flutter/material.dart';
 
 class OthersProfileScreen extends BasePageScreen {
@@ -17,10 +18,10 @@ class OthersProfileScreen extends BasePageScreen {
   State<OthersProfileScreen> createState() => _OthersProfileScreenState();
 }
 
-class _OthersProfileScreenState extends BaseScreenState<OthersProfileScreen> with BaseScreen, TickerProviderStateMixin {
-  
+class _OthersProfileScreenState extends BaseScreenState<OthersProfileScreen>
+    with BaseScreen, TickerProviderStateMixin {
   late TabController tabController;
-  
+
   @override
   void initState() {
     tabController = TabController(length: 2, vsync: this);
@@ -31,7 +32,7 @@ class _OthersProfileScreenState extends BaseScreenState<OthersProfileScreen> wit
   String appBarTitle() {
     return "Harry Brooks";
   }
-  
+
   @override
   void onClickBackButton() {
     StackNavigator.instance.popScreen(context);
@@ -44,7 +45,7 @@ class _OthersProfileScreenState extends BaseScreenState<OthersProfileScreen> wit
   List<Widget>? getActions() {
     return [];
   }
-  
+
   @override
   Widget body() {
     return NestedScrollView(
@@ -58,18 +59,22 @@ class _OthersProfileScreenState extends BaseScreenState<OthersProfileScreen> wit
             flexibleSpace: FlexibleSpaceBar(
               collapseMode: CollapseMode.pin,
               background: Column(
-                children:  [
+                children: [
                   const ProfileInfoWidget(),
-                  const SizedBox(
+                  Separator(
                     height: 30,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      LocalImageView(path: "assets/github.png", width: 35, height: 35),
-                      LocalImageView(path: "assets/gmail.png", width: 35, height: 35),
-                      LocalImageView(path: "assets/linkedin.png", width: 35, height: 35),
-                      LocalImageView(path: "assets/phone.png", width: 35, height: 35),
+                      LocalImageView(
+                          path: "assets/github.png", width: 35, height: 35),
+                      LocalImageView(
+                          path: "assets/gmail.png", width: 35, height: 35),
+                      LocalImageView(
+                          path: "assets/linkedin.png", width: 35, height: 35),
+                      LocalImageView(
+                          path: "assets/phone.png", width: 35, height: 35),
                     ],
                   ),
                 ],
@@ -82,10 +87,20 @@ class _OthersProfileScreenState extends BaseScreenState<OthersProfileScreen> wit
               isScrollable: false,
               tabs: [
                 Tab(
-                  child: CustomTextField(text: "Info", textColor: Colours.black, fontSize: 14, fontWeight: FontWeight.w600,),
+                  child: CustomTextField(
+                    text: "Info",
+                    textColor: Colours.black,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
                 Tab(
-                  child: CustomTextField(text: "Posts", textColor: Colours.black, fontSize: 14, fontWeight: FontWeight.w600,),
+                  child: CustomTextField(
+                    text: "Posts",
+                    textColor: Colours.black,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ],
               controller: tabController,
@@ -102,4 +117,4 @@ class _OthersProfileScreenState extends BaseScreenState<OthersProfileScreen> wit
       ),
     );
   }
-} 
+}

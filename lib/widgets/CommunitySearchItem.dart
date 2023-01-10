@@ -2,16 +2,16 @@
 import 'package:code_buddy/utils/Colours.dart';
 import 'package:code_buddy/widgets/CircularNetworkImage.dart';
 import 'package:code_buddy/widgets/CustomTextField.dart';
+import 'package:code_buddy/widgets/Separator.dart';
 import 'package:flutter/material.dart';
+
 class CommunitySearchItem extends StatelessWidget {
   const CommunitySearchItem({super.key});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        
-      },
+      onTap: () {},
       child: Container(
         padding: const EdgeInsets.all(12),
         child: Row(
@@ -22,15 +22,27 @@ class CommunitySearchItem extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CustomTextField(text: 'Foobar', textColor: Colours.blueAccent, fontSize: 14, fontWeight: FontWeight.w600),
-                  const SizedBox(
+                  CustomTextField(
+                      text: 'Foobar',
+                      textColor: Colours.blueAccent,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600),
+                  Separator(
                     height: 5,
                   ),
-                  CustomTextField(text: 'Make changes in tech', textColor: Colours.black, fontSize: 13, fontWeight: FontWeight.normal),
-                  const SizedBox(
+                  CustomTextField(
+                      text: 'Make changes in tech',
+                      textColor: Colours.black,
+                      fontSize: 13,
+                      fontWeight: FontWeight.normal),
+                  Separator(
                     height: 5,
                   ),
-                  CustomTextField(text: '200 People follow this community', textColor: Colours.grey, fontSize: 12, fontWeight: FontWeight.bold),
+                  CustomTextField(
+                      text: '200 People follow this community',
+                      textColor: Colours.grey,
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold),
                 ],
               ),
             ),

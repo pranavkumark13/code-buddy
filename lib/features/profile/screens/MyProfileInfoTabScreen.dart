@@ -7,6 +7,7 @@ import 'package:code_buddy/widgets/ChipWidget.dart';
 import 'package:code_buddy/widgets/CustomTextField.dart';
 import 'package:code_buddy/widgets/CustomTextWidget.dart';
 import 'package:code_buddy/widgets/HeaderView.dart';
+import 'package:code_buddy/widgets/Separator.dart';
 import 'package:flutter/material.dart';
 
 class MyProfileInfoTabScreen extends BasePageScreen {
@@ -16,13 +17,13 @@ class MyProfileInfoTabScreen extends BasePageScreen {
   State<MyProfileInfoTabScreen> createState() => _MyProfileInfoTabScreenState();
 }
 
-class _MyProfileInfoTabScreenState extends BaseScreenState<MyProfileInfoTabScreen> with BaseScreen {
-  
+class _MyProfileInfoTabScreenState
+    extends BaseScreenState<MyProfileInfoTabScreen> with BaseScreen {
   @override
   String appBarTitle() {
     return "";
   }
-  
+
   @override
   List<Widget>? getActions() {
     return [];
@@ -33,12 +34,12 @@ class _MyProfileInfoTabScreenState extends BaseScreenState<MyProfileInfoTabScree
     isBack = false;
     super.isBack = isBack;
   }
-  
+
   @override
   void onClickBackButton() {
     StackNavigator.instance.popScreen(context);
   }
-  
+
   @override
   Widget body() {
     return SingleChildScrollView(
@@ -52,7 +53,11 @@ class _MyProfileInfoTabScreenState extends BaseScreenState<MyProfileInfoTabScree
               children: [
                 Container(
                   margin: const EdgeInsets.only(top: 25),
-                  child: CustomTextField(text: "Your Name", textColor: Colours.black, fontSize: 14, fontWeight: FontWeight.w600),
+                  child: CustomTextField(
+                      text: "Your Name",
+                      textColor: Colours.black,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600),
                 ),
                 Container(
                   margin: const EdgeInsets.only(top: 12),
@@ -60,55 +65,79 @@ class _MyProfileInfoTabScreenState extends BaseScreenState<MyProfileInfoTabScree
                 ),
                 Container(
                   margin: const EdgeInsets.only(top: 15),
-                  child: CustomTextField(text: "Email ID", textColor: Colours.black, fontSize: 14, fontWeight: FontWeight.w600),
+                  child: CustomTextField(
+                      text: "Email ID",
+                      textColor: Colours.black,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600),
                 ),
                 Container(
-                  margin: const EdgeInsets.only(top: 12),
-                  child: CustomTextWidget(text: "pranavk1310@gmail.com",)
-                ),
-                Container(
-                  margin: const EdgeInsets.only(top: 15),
-                  child: CustomTextField(text: "Phone Number", textColor: Colours.black, fontSize: 14, fontWeight: FontWeight.w600),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(top: 12),
-                  child: CustomTextWidget(text: "+91 7395925892")
-                ),
+                    margin: const EdgeInsets.only(top: 12),
+                    child: CustomTextWidget(
+                      text: "pranavk1310@gmail.com",
+                    )),
                 Container(
                   margin: const EdgeInsets.only(top: 15),
-                  child: CustomTextField(text: "Date of Birth", textColor: Colours.black, fontSize: 14, fontWeight: FontWeight.w600),
+                  child: CustomTextField(
+                      text: "Phone Number",
+                      textColor: Colours.black,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600),
                 ),
                 Container(
-                  margin: const EdgeInsets.only(top: 12),
-                  child: CustomTextWidget(text: "13 October 1998")
-                ),
-                Container(
-                  margin: const EdgeInsets.only(top: 15),
-                  child: CustomTextField(text: "Gender", textColor: Colours.black, fontSize: 14, fontWeight: FontWeight.w600),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(top: 12),
-                  child: CustomTextWidget(text: "Male")
-                ),
+                    margin: const EdgeInsets.only(top: 12),
+                    child: CustomTextWidget(text: "+91 7395925892")),
                 Container(
                   margin: const EdgeInsets.only(top: 15),
-                  child: CustomTextField(text: "Nationality", textColor: Colours.black, fontSize: 14, fontWeight: FontWeight.w600),
+                  child: CustomTextField(
+                      text: "Date of Birth",
+                      textColor: Colours.black,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600),
                 ),
                 Container(
-                  margin: const EdgeInsets.only(top: 12),
-                  child: CustomTextWidget(text: "Indian")
-                ),
-                Container(
-                  margin: const EdgeInsets.only(top: 15),
-                  child: CustomTextField(text: "Country of Residence", textColor: Colours.black, fontSize: 14, fontWeight: FontWeight.w600),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(top: 12),
-                  child: CustomTextWidget(text: "India")
-                ),
+                    margin: const EdgeInsets.only(top: 12),
+                    child: CustomTextWidget(text: "13 October 1998")),
                 Container(
                   margin: const EdgeInsets.only(top: 15),
-                  child: CustomTextField(text: "Languages known", textColor: Colours.black, fontSize: 14, fontWeight: FontWeight.w600),
+                  child: CustomTextField(
+                      text: "Gender",
+                      textColor: Colours.black,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600),
+                ),
+                Container(
+                    margin: const EdgeInsets.only(top: 12),
+                    child: CustomTextWidget(text: "Male")),
+                Container(
+                  margin: const EdgeInsets.only(top: 15),
+                  child: CustomTextField(
+                      text: "Nationality",
+                      textColor: Colours.black,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600),
+                ),
+                Container(
+                    margin: const EdgeInsets.only(top: 12),
+                    child: CustomTextWidget(text: "Indian")),
+                Container(
+                  margin: const EdgeInsets.only(top: 15),
+                  child: CustomTextField(
+                      text: "Country of Residence",
+                      textColor: Colours.black,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600),
+                ),
+                Container(
+                    margin: const EdgeInsets.only(top: 12),
+                    child: CustomTextWidget(text: "India")),
+                Container(
+                  margin: const EdgeInsets.only(top: 15),
+                  child: CustomTextField(
+                      text: "Languages known",
+                      textColor: Colours.black,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600),
                 ),
                 Wrap(
                   spacing: 6.0,
@@ -122,7 +151,7 @@ class _MyProfileInfoTabScreenState extends BaseScreenState<MyProfileInfoTabScree
               ],
             ),
           ),
-          const SizedBox(
+          Separator(
             height: 15,
           ),
           HeaderView(title: "My Professional Information"),
@@ -133,41 +162,59 @@ class _MyProfileInfoTabScreenState extends BaseScreenState<MyProfileInfoTabScree
               children: [
                 Container(
                   margin: const EdgeInsets.only(top: 25),
-                  child: CustomTextField(text: "Github", textColor: Colours.black, fontSize: 14, fontWeight: FontWeight.w600),
+                  child: CustomTextField(
+                      text: "Github",
+                      textColor: Colours.black,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600),
                 ),
                 Container(
-                  margin: const EdgeInsets.only(top: 12),
-                  child: CustomTextWidget(text: "@pranav9828")
-                ),
-                Container(
-                  margin: const EdgeInsets.only(top: 15),
-                  child: CustomTextField(text: "Linkedin", textColor: Colours.black, fontSize: 14, fontWeight: FontWeight.w600),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(top: 12),
-                  child: CustomTextWidget(text: "Pranav Kumar K",)
-                ),
+                    margin: const EdgeInsets.only(top: 12),
+                    child: CustomTextWidget(text: "@pranav9828")),
                 Container(
                   margin: const EdgeInsets.only(top: 15),
-                  child: CustomTextField(text: "Current Designation", textColor: Colours.black, fontSize: 14, fontWeight: FontWeight.w600),
+                  child: CustomTextField(
+                      text: "Linkedin",
+                      textColor: Colours.black,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600),
                 ),
                 Container(
-                  margin: const EdgeInsets.only(top: 12),
-                  child: CustomTextWidget(text: "iOS Developer")
-                ),
-                Container(
-                  margin: const EdgeInsets.only(top: 15),
-                  child: CustomTextField(text: "Work Experience", textColor: Colours.black, fontSize: 14, fontWeight: FontWeight.w600),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(top: 12),
-                  child: CustomTextWidget(text: "2 years")
-                ),
+                    margin: const EdgeInsets.only(top: 12),
+                    child: CustomTextWidget(
+                      text: "Pranav Kumar K",
+                    )),
                 Container(
                   margin: const EdgeInsets.only(top: 15),
-                  child: CustomTextField(text: "Technologies known", textColor: Colours.black, fontSize: 14, fontWeight: FontWeight.w600),
+                  child: CustomTextField(
+                      text: "Current Designation",
+                      textColor: Colours.black,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600),
                 ),
-                const SizedBox(
+                Container(
+                    margin: const EdgeInsets.only(top: 12),
+                    child: CustomTextWidget(text: "iOS Developer")),
+                Container(
+                  margin: const EdgeInsets.only(top: 15),
+                  child: CustomTextField(
+                      text: "Work Experience",
+                      textColor: Colours.black,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600),
+                ),
+                Container(
+                    margin: const EdgeInsets.only(top: 12),
+                    child: CustomTextWidget(text: "2 years")),
+                Container(
+                  margin: const EdgeInsets.only(top: 15),
+                  child: CustomTextField(
+                      text: "Technologies known",
+                      textColor: Colours.black,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600),
+                ),
+                Separator(
                   height: 12,
                 ),
                 Wrap(
@@ -181,9 +228,13 @@ class _MyProfileInfoTabScreenState extends BaseScreenState<MyProfileInfoTabScree
                 ),
                 Container(
                   margin: const EdgeInsets.only(top: 15),
-                  child: CustomTextField(text: "Programming languages known", textColor: Colours.black, fontSize: 14, fontWeight: FontWeight.w600),
+                  child: CustomTextField(
+                      text: "Programming languages known",
+                      textColor: Colours.black,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600),
                 ),
-                const SizedBox(
+                Separator(
                   height: 12,
                 ),
                 Wrap(
@@ -202,4 +253,4 @@ class _MyProfileInfoTabScreenState extends BaseScreenState<MyProfileInfoTabScree
       ),
     );
   }
-} 
+}

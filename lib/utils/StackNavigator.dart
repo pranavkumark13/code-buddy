@@ -8,9 +8,9 @@ class StackNavigator {
   static final instance = StackNavigator._();
 
   void sendToScreen(BuildContext context, dynamic screen) {
-    if(Platform.isAndroid) {
+    if (Platform.isAndroid) {
       Navigator.push(context, MaterialPageRoute(builder: (context) => screen));
-    }else {
+    } else {
       Navigator.push(context, CupertinoPageRoute(builder: (context) => screen));
     }
   }
