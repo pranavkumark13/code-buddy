@@ -13,8 +13,8 @@ class CreateCommunityScreen extends BasePageScreen {
   State<CreateCommunityScreen> createState() => _CreateCommunityScreenState();
 }
 
-class _CreateCommunityScreenState extends BaseScreenState<CreateCommunityScreen> with BaseScreen {
-  
+class _CreateCommunityScreenState extends BaseScreenState<CreateCommunityScreen>
+    with BaseScreen {
   @override
   String appBarTitle() {
     return "Create a Community";
@@ -22,19 +22,30 @@ class _CreateCommunityScreenState extends BaseScreenState<CreateCommunityScreen>
 
   @override
   List<Widget>? getActions() {
-    return [GestureDetector(onTap: () {StackNavigator.instance.popScreen(context);}, child: Container(margin: const EdgeInsets.only(right: 12), child: const Icon(Iconsax.tick_circle, color: Colours.black,)))];
+    return [
+      GestureDetector(
+          onTap: () {
+            StackNavigator.instance.popScreen(context);
+          },
+          child: Container(
+              margin: const EdgeInsets.only(right: 12),
+              child: Icon(
+                Iconsax.tick_circle,
+                color: Colours.black,
+              )))
+    ];
   }
 
   @override
   bool showAppBar = true;
-  
+
   @override
   void onClickBackButton() {
     StackNavigator.instance.popScreen(context);
   }
-  
+
   @override
   Widget body() {
     return Container();
   }
-} 
+}

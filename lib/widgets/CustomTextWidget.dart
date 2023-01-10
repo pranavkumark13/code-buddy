@@ -2,6 +2,7 @@
 
 import 'package:code_buddy/utils/Colours.dart';
 import 'package:flutter/material.dart';
+
 class CustomTextWidget extends StatefulWidget {
   String text;
   CustomTextWidget({super.key, required this.text});
@@ -22,7 +23,7 @@ class _CustomTextWidgetState extends State<CustomTextWidget> {
       ),
       child: Text(
         widget.text,
-        style: const TextStyle(
+        style: TextStyle(
           fontSize: 15,
           fontWeight: FontWeight.normal,
           color: Colours.black,

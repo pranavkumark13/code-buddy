@@ -94,15 +94,17 @@ class _EditProfileScreenState extends BaseScreenState<EditProfileScreen>
   List<Widget>? getActions() {
     return [
       GestureDetector(
-          onTap: () {
-            StackNavigator.instance.popScreen(context);
-          },
-          child: Container(
-              margin: const EdgeInsets.only(right: 12),
-              child: const Icon(
-                Iconsax.tick_circle,
-                color: Colours.black,
-              )))
+        onTap: () {
+          StackNavigator.instance.popScreen(context);
+        },
+        child: Container(
+          margin: const EdgeInsets.only(right: 12),
+          child: Icon(
+            Iconsax.tick_circle,
+            color: Colours.black,
+          ),
+        ),
+      ),
     ];
   }
 

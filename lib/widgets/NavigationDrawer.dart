@@ -65,7 +65,7 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
           Separator(
             height: 20,
           ),
-          const Divider(
+          Divider(
             color: Colours.grey,
             height: 1,
           ),

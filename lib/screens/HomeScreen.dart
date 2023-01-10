@@ -22,14 +22,24 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _bottomNavIndex = 0;
-  List<IconData> icons = [Iconsax.story, EvaIcons.search , EvaIcons.compassOutline , EvaIcons.messageCircleOutline];
-  List<Widget> screens = [const FeedsScreen(), const SearchScreen() , const ConnectScreen(), const ChatScreen()];
+  List<IconData> icons = [
+    Iconsax.story,
+    EvaIcons.search,
+    EvaIcons.compassOutline,
+    EvaIcons.messageCircleOutline
+  ];
+  List<Widget> screens = [
+    const FeedsScreen(),
+    const SearchScreen(),
+    const ConnectScreen(),
+    const ChatScreen()
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colours.white,
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colours.black),
+        iconTheme: IconThemeData(color: Colours.black),
         backgroundColor: Colours.white,
         elevation: 0.0,
         title: getAppBarTitle(_bottomNavIndex),
@@ -37,14 +47,17 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           Container(
             margin: const EdgeInsets.only(right: 15),
-            child: CustomIcon(iconData: Iconsax.notification, onTap: () {
-              StackNavigator.instance.sendToScreen(context, const NotificationsScreen());
-            }),
+            child: CustomIcon(
+                iconData: Iconsax.notification,
+                onTap: () {
+                  StackNavigator.instance
+                      .sendToScreen(context, const NotificationsScreen());
+                }),
           ),
         ],
       ),
       body: Center(
-          child: screens.elementAt(_bottomNavIndex),
+        child: screens.elementAt(_bottomNavIndex),
       ),
       drawer: const NavigationDrawer(),
       bottomNavigationBar: AnimatedBottomNavigationBar(
@@ -62,15 +75,31 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget? getAppBarTitle(int index) {
-    switch(index) {
+    switch (index) {
       case 0:
-        return CustomTextField(text: "Feeds", textColor: Colours.black, fontSize: 16, fontWeight: FontWeight.w600);
+        return CustomTextField(
+            text: "Feeds",
+            textColor: Colours.black,
+            fontSize: 16,
+            fontWeight: FontWeight.w600);
       case 1:
-        return CustomTextField(text: "Search", textColor: Colours.black, fontSize: 16, fontWeight: FontWeight.w600);
+        return CustomTextField(
+            text: "Search",
+            textColor: Colours.black,
+            fontSize: 16,
+            fontWeight: FontWeight.w600);
       case 2:
-        return CustomTextField(text: "Connect", textColor: Colours.black, fontSize: 16, fontWeight: FontWeight.w600);
+        return CustomTextField(
+            text: "Connect",
+            textColor: Colours.black,
+            fontSize: 16,
+            fontWeight: FontWeight.w600);
       case 3:
-        return CustomTextField(text: "Chats", textColor: Colours.black, fontSize: 16, fontWeight: FontWeight.w600);
+        return CustomTextField(
+            text: "Chats",
+            textColor: Colours.black,
+            fontSize: 16,
+            fontWeight: FontWeight.w600);
       default:
         print("Index not found");
         return null;

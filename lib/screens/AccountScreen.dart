@@ -1,6 +1,6 @@
 // ignore_for_file: file_names, overridden_fields
-import 'dart:io';
 
+import 'package:code_buddy/utils/Colours.dart';
 import 'package:code_buddy/utils/StackNavigator.dart';
 import 'package:code_buddy/utils/BaseScreen.dart';
 import 'package:code_buddy/utils/BaseScreenState.dart';
@@ -8,7 +8,6 @@ import 'package:code_buddy/widgets/AlertDialog.dart';
 import 'package:code_buddy/widgets/CustomButton.dart';
 import 'package:code_buddy/widgets/CustomTextField.dart';
 import 'package:code_buddy/widgets/Separator.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AccountScreen extends BasePageScreen {
@@ -50,8 +49,7 @@ class _AccountScreenState extends BaseScreenState<AccountScreen>
           ),
           CustomTextField(
               text: "Delete Account",
-              textColor:
-                  Platform.isAndroid ? Colors.red : CupertinoColors.systemRed,
+              textColor: Colours.red,
               fontSize: 16,
               fontWeight: FontWeight.w600),
           Separator(
@@ -60,8 +58,7 @@ class _AccountScreenState extends BaseScreenState<AccountScreen>
           CustomTextField(
               text:
                   "All your personal data will be permanantly deleted from our system and it cannot be recovered.",
-              textColor:
-                  Platform.isAndroid ? Colors.black : CupertinoColors.black,
+              textColor: Colours.black,
               fontSize: 14,
               fontWeight: FontWeight.normal),
           Separator(

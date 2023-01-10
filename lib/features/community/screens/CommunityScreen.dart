@@ -14,8 +14,8 @@ class CommunityScreen extends BasePageScreen {
   State<CommunityScreen> createState() => _CommunityScreenState();
 }
 
-class _CommunityScreenState extends BaseScreenState<CommunityScreen> with BaseScreen, TickerProviderStateMixin {
-  
+class _CommunityScreenState extends BaseScreenState<CommunityScreen>
+    with BaseScreen, TickerProviderStateMixin {
   late TabController tabController;
 
   @override
@@ -23,6 +23,7 @@ class _CommunityScreenState extends BaseScreenState<CommunityScreen> with BaseSc
     tabController = TabController(length: 2, vsync: this);
     super.initState();
   }
+
   @override
   String appBarTitle() {
     return "Community";
@@ -30,17 +31,29 @@ class _CommunityScreenState extends BaseScreenState<CommunityScreen> with BaseSc
 
   @override
   List<Widget>? getActions() {
-    return [GestureDetector(onTap: () {StackNavigator.instance.sendToScreen(context, const CreateCommunityScreen());}, child: Container(margin: const EdgeInsets.only(right: 12), child: const Icon(Iconsax.add_circle, color: Colours.black,)))];
+    return [
+      GestureDetector(
+          onTap: () {
+            StackNavigator.instance
+                .sendToScreen(context, const CreateCommunityScreen());
+          },
+          child: Container(
+              margin: const EdgeInsets.only(right: 12),
+              child: Icon(
+                Iconsax.add_circle,
+                color: Colours.black,
+              )))
+    ];
   }
 
   @override
   bool showAppBar = true;
-  
+
   @override
   void onClickBackButton() {
     StackNavigator.instance.popScreen(context);
   }
-  
+
   @override
   Widget body() {
     return NestedScrollView(
@@ -78,4 +91,4 @@ class _CommunityScreenState extends BaseScreenState<CommunityScreen> with BaseSc
       ),
     );
   }
-} 
+}

@@ -1,9 +1,7 @@
 // ignore_for_file: file_names
-import 'dart:io';
 import 'package:code_buddy/utils/Colours.dart';
 import 'package:code_buddy/utils/StackNavigator.dart';
 import 'package:code_buddy/widgets/CustomTextField.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AppUtils {
@@ -29,11 +27,10 @@ class AppUtils {
   PreferredSizeWidget appBar(
       BuildContext context, String title, List<Widget> actions) {
     return AppBar(
-      backgroundColor:
-          Platform.isAndroid ? Colours.white : CupertinoColors.white,
+      backgroundColor: Colours.white,
       title: CustomTextField(
           text: title,
-          textColor: Platform.isAndroid ? Colours.black : CupertinoColors.black,
+          textColor: Colours.black,
           fontSize: 16,
           fontWeight: FontWeight.w600),
       centerTitle: true,
@@ -42,7 +39,7 @@ class AppUtils {
       leading: IconButton(
         icon: Icon(
           Icons.arrow_back_ios,
-          color: Platform.isAndroid ? Colours.black : CupertinoColors.black,
+          color: Colours.black,
         ),
         onPressed: () {
           StackNavigator.instance.popScreen(context);
@@ -58,7 +55,7 @@ class AppUtils {
         return Container(
           height: 400,
           decoration: BoxDecoration(
-            color: Platform.isAndroid ? Colours.white : CupertinoColors.white,
+            color: Colours.white,
             borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(10), topRight: Radius.circular(10)),
           ),

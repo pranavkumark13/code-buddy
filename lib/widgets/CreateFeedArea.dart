@@ -11,7 +11,6 @@ class CreateFeedArea extends StatefulWidget {
 }
 
 class _CreateFeedAreaState extends State<CreateFeedArea> {
-
   @override
   void dispose() {
     widget.textEditingController.dispose();
@@ -22,7 +21,7 @@ class _CreateFeedAreaState extends State<CreateFeedArea> {
   Widget build(BuildContext context) {
     return TextField(
       controller: widget.textEditingController,
-      style: const TextStyle(
+      style: TextStyle(
         color: Colours.black,
       ),
       maxLines: 12,

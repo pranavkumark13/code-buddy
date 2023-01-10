@@ -1,5 +1,4 @@
 // ignore_for_file: must_be_immutable, file_names
-import 'package:code_buddy/utils/Colours.dart';
 import 'package:flutter/material.dart';
 
 class CustomIcon extends StatelessWidget {
@@ -13,7 +12,7 @@ class CustomIcon extends StatelessWidget {
       required this.iconData,
       this.onTap,
       this.iconSize,
-      this.iconColor = Colours.black});
+      this.iconColor = Colors.black});
 
   @override
   Widget build(BuildContext context) {

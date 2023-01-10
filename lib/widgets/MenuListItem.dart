@@ -2,11 +2,16 @@
 import 'package:code_buddy/utils/Colours.dart';
 import 'package:code_buddy/widgets/CustomTextField.dart';
 import 'package:flutter/material.dart';
+
 class MenuListItem extends StatefulWidget {
   String itemName;
   IconData icon;
   Function onTap;
-  MenuListItem({super.key, required this.itemName, required this.icon, required this.onTap});
+  MenuListItem(
+      {super.key,
+      required this.itemName,
+      required this.icon,
+      required this.onTap});
 
   @override
   State<MenuListItem> createState() => _MenuListItemState();
@@ -29,19 +34,24 @@ class _MenuListItemState extends State<MenuListItem> {
                 color: Colours.blueAccent,
                 borderRadius: BorderRadius.circular(30),
               ),
-              child:  Icon(
+              child: Icon(
                 widget.icon,
                 color: Colours.white,
               ),
             ),
             Container(
               margin: const EdgeInsets.only(left: 20),
-              child: CustomTextField(text: widget.itemName, textColor: Colours.black, fontSize: 15, fontWeight: FontWeight.w600,),
+              child: CustomTextField(
+                text: widget.itemName,
+                textColor: Colours.black,
+                fontSize: 15,
+                fontWeight: FontWeight.w600,
+              ),
             ),
             Expanded(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
-                children: const [
+                children: [
                   Icon(
                     Icons.arrow_forward_ios_rounded,
                     color: Colours.grey,
